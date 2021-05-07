@@ -20,6 +20,14 @@
 	<string>1</string>
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
+	<key>NSCameraUsageDescription</key>
+	<string>Weather Widget would like to access your phone camera inorder to capture image for background.</string>
+	<key>NSLocationAlwaysAndWhenInUseUsageDescription</key>
+	<string>Weather Widget would like to access your location inorder to get the weather report.</string>
+	<key>NSLocationWhenInUseUsageDescription</key>
+	<string>Weather Widget would like to access your location inorder to get the weather report.</string>
+	<key>NSPhotoLibraryUsageDescription</key>
+	<string>Weather Widget would like to access your phone library inorder to select image for background.</string>
 	<key>UIApplicationSceneManifest</key>
 	<dict>
 		<key>UIApplicationSupportsMultipleScenes</key>
@@ -41,6 +49,12 @@
 	</dict>
 	<key>UIApplicationSupportsIndirectInputEvents</key>
 	<true/>
+	<key>UIBackgroundModes</key>
+	<array>
+		<string>fetch</string>
+		<string>location</string>
+		<string>processing</string>
+	</array>
 	<key>UILaunchStoryboardName</key>
 	<string>LaunchScreen</string>
 	<key>UIMainStoryboardFile</key>
@@ -61,6 +75,11 @@
 		<string>UIInterfaceOrientationPortraitUpsideDown</string>
 		<string>UIInterfaceOrientationLandscapeLeft</string>
 		<string>UIInterfaceOrientationLandscapeRight</string>
+	</array>
+	<key>BGTaskSchedulerPermittedIdentifiers</key>
+	<array>
+		<string>com.lotuslabs.weatherDataRefreshIdentifier</string>
+		<string>com.lotuslabs.weatherDataProcessIdentifier</string>
 	</array>
 </dict>
 </plist>

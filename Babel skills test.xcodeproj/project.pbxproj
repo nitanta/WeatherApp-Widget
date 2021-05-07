@@ -16,6 +16,25 @@
 		5074106726452EBA00B8E505 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5074106526452EBA00B8E505 /* LaunchScreen.storyboard */; };
 		5074107226452EBB00B8E505 /* Babel_skills_testTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5074107126452EBB00B8E505 /* Babel_skills_testTests.swift */; };
 		5074107D26452EBB00B8E505 /* Babel_skills_testUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5074107C26452EBB00B8E505 /* Babel_skills_testUITests.swift */; };
+		5074109426452F8900B8E505 /* WidgetKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5074109326452F8900B8E505 /* WidgetKit.framework */; };
+		5074109626452F8900B8E505 /* SwiftUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5074109526452F8900B8E505 /* SwiftUI.framework */; };
+		5074109926452F8900B8E505 /* Widget_skills_test.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5074109826452F8900B8E505 /* Widget_skills_test.swift */; };
+		5074109C26452F8B00B8E505 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5074109B26452F8B00B8E505 /* Assets.xcassets */; };
+		5074109E26452F8B00B8E505 /* Widget_skills_test.intentdefinition in Sources */ = {isa = PBXBuildFile; fileRef = 5074109A26452F8900B8E505 /* Widget_skills_test.intentdefinition */; };
+		5074109F26452F8B00B8E505 /* Widget_skills_test.intentdefinition in Sources */ = {isa = PBXBuildFile; fileRef = 5074109A26452F8900B8E505 /* Widget_skills_test.intentdefinition */; };
+		507410A226452F8B00B8E505 /* Widget skills testExtension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 5074109126452F8900B8E505 /* Widget skills testExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		507410B32645339100B8E505 /* WidgetCollectionviewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 507410B12645339100B8E505 /* WidgetCollectionviewCell.swift */; };
+		507410B42645339100B8E505 /* WidgetCollectionviewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 507410B22645339100B8E505 /* WidgetCollectionviewCell.xib */; };
+		507410E226457F1400B8E505 /* APIErrrors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 507410E126457F1400B8E505 /* APIErrrors.swift */; };
+		507410E826457F3E00B8E505 /* AppEndpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 507410E726457F3E00B8E505 /* AppEndpoint.swift */; };
+		507410F226457F8900B8E505 /* ApiProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 507410F126457F8900B8E505 /* ApiProvider.swift */; };
+		507410F826457FD700B8E505 /* Container.swift in Sources */ = {isa = PBXBuildFile; fileRef = 507410F726457FD700B8E505 /* Container.swift */; };
+		507410FF2645800D00B8E505 /* Global.swift in Sources */ = {isa = PBXBuildFile; fileRef = 507410FE2645800D00B8E505 /* Global.swift */; };
+		5074110C2645815400B8E505 /* WeatherService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5074110B2645815400B8E505 /* WeatherService.swift */; };
+		50741117264583E600B8E505 /* WheatherResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50741116264583E600B8E505 /* WheatherResponse.swift */; };
+		507411222645844200B8E505 /* ErrorResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 507411212645844200B8E505 /* ErrorResponse.swift */; };
+		5074112C264584C400B8E505 /* DataExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5074112B264584C400B8E505 /* DataExtension.swift */; };
+		5074113226458A4800B8E505 /* ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5074113126458A4800B8E505 /* ViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -33,7 +52,28 @@
 			remoteGlobalIDString = 5074105326452EB700B8E505;
 			remoteInfo = "Babel skills test";
 		};
+		507410A026452F8B00B8E505 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 5074104C26452EB600B8E505 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 5074109026452F8900B8E505;
+			remoteInfo = "Widget skills testExtension";
+		};
 /* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		507410A626452F8B00B8E505 /* Embed App Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				507410A226452F8B00B8E505 /* Widget skills testExtension.appex in Embed App Extensions */,
+			);
+			name = "Embed App Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		5074105426452EB700B8E505 /* Babel skills test.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Babel skills test.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -51,6 +91,27 @@
 		5074107826452EBB00B8E505 /* Babel skills testUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Babel skills testUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		5074107C26452EBB00B8E505 /* Babel_skills_testUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Babel_skills_testUITests.swift; sourceTree = "<group>"; };
 		5074107E26452EBB00B8E505 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		5074109126452F8900B8E505 /* Widget skills testExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "Widget skills testExtension.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
+		5074109326452F8900B8E505 /* WidgetKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WidgetKit.framework; path = System/Library/Frameworks/WidgetKit.framework; sourceTree = SDKROOT; };
+		5074109526452F8900B8E505 /* SwiftUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftUI.framework; path = System/Library/Frameworks/SwiftUI.framework; sourceTree = SDKROOT; };
+		5074109826452F8900B8E505 /* Widget_skills_test.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Widget_skills_test.swift; sourceTree = "<group>"; };
+		5074109A26452F8900B8E505 /* Widget_skills_test.intentdefinition */ = {isa = PBXFileReference; lastKnownFileType = file.intentdefinition; path = Widget_skills_test.intentdefinition; sourceTree = "<group>"; };
+		5074109B26452F8B00B8E505 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		5074109D26452F8B00B8E505 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		507410B12645339100B8E505 /* WidgetCollectionviewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WidgetCollectionviewCell.swift; sourceTree = "<group>"; };
+		507410B22645339100B8E505 /* WidgetCollectionviewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = WidgetCollectionviewCell.xib; sourceTree = "<group>"; };
+		507410E126457F1400B8E505 /* APIErrrors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIErrrors.swift; sourceTree = "<group>"; };
+		507410E726457F3E00B8E505 /* AppEndpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppEndpoint.swift; sourceTree = "<group>"; };
+		507410F126457F8900B8E505 /* ApiProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiProvider.swift; sourceTree = "<group>"; };
+		507410F726457FD700B8E505 /* Container.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Container.swift; sourceTree = "<group>"; };
+		507410FE2645800D00B8E505 /* Global.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Global.swift; sourceTree = "<group>"; };
+		5074110B2645815400B8E505 /* WeatherService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherService.swift; sourceTree = "<group>"; };
+		50741116264583E600B8E505 /* WheatherResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WheatherResponse.swift; sourceTree = "<group>"; };
+		507411212645844200B8E505 /* ErrorResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorResponse.swift; sourceTree = "<group>"; };
+		5074112B264584C400B8E505 /* DataExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataExtension.swift; sourceTree = "<group>"; };
+		5074113126458A4800B8E505 /* ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModel.swift; sourceTree = "<group>"; };
+		507411492645AF2600B8E505 /* Babel skills test.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "Babel skills test.entitlements"; sourceTree = "<group>"; };
+		5074114E2645AFC900B8E505 /* Widget skills testExtension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "Widget skills testExtension.entitlements"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -75,15 +136,32 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		5074108E26452F8900B8E505 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5074109626452F8900B8E505 /* SwiftUI.framework in Frameworks */,
+				5074109426452F8900B8E505 /* WidgetKit.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
 		5074104B26452EB600B8E505 = {
 			isa = PBXGroup;
 			children = (
+				5074114E2645AFC900B8E505 /* Widget skills testExtension.entitlements */,
+				50741109264580F300B8E505 /* Model */,
+				50741108264580E500B8E505 /* Extension */,
+				507410FD26457FFA00B8E505 /* AppConstants */,
+				507410E026457EFB00B8E505 /* Network */,
+				507410AF2645334C00B8E505 /* Modules */,
 				5074105626452EB700B8E505 /* Babel skills test */,
 				5074107026452EBB00B8E505 /* Babel skills testTests */,
 				5074107B26452EBB00B8E505 /* Babel skills testUITests */,
+				5074109726452F8900B8E505 /* Widget skills test */,
+				5074109226452F8900B8E505 /* Frameworks */,
 				5074105526452EB700B8E505 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -94,6 +172,7 @@
 				5074105426452EB700B8E505 /* Babel skills test.app */,
 				5074106D26452EBA00B8E505 /* Babel skills testTests.xctest */,
 				5074107826452EBB00B8E505 /* Babel skills testUITests.xctest */,
+				5074109126452F8900B8E505 /* Widget skills testExtension.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -101,12 +180,10 @@
 		5074105626452EB700B8E505 /* Babel skills test */ = {
 			isa = PBXGroup;
 			children = (
+				507411492645AF2600B8E505 /* Babel skills test.entitlements */,
 				5074105726452EB700B8E505 /* AppDelegate.swift */,
 				5074105926452EB700B8E505 /* SceneDelegate.swift */,
-				5074105B26452EB700B8E505 /* ViewController.swift */,
-				5074105D26452EB700B8E505 /* Main.storyboard */,
 				5074106326452EBA00B8E505 /* Assets.xcassets */,
-				5074106526452EBA00B8E505 /* LaunchScreen.storyboard */,
 				5074106826452EBA00B8E505 /* Info.plist */,
 				5074106026452EB700B8E505 /* Babel_skills_test.xcdatamodeld */,
 			);
@@ -131,6 +208,116 @@
 			path = "Babel skills testUITests";
 			sourceTree = "<group>";
 		};
+		5074109226452F8900B8E505 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				5074109326452F8900B8E505 /* WidgetKit.framework */,
+				5074109526452F8900B8E505 /* SwiftUI.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		5074109726452F8900B8E505 /* Widget skills test */ = {
+			isa = PBXGroup;
+			children = (
+				5074109826452F8900B8E505 /* Widget_skills_test.swift */,
+				5074109A26452F8900B8E505 /* Widget_skills_test.intentdefinition */,
+				5074109B26452F8B00B8E505 /* Assets.xcassets */,
+				5074109D26452F8B00B8E505 /* Info.plist */,
+			);
+			path = "Widget skills test";
+			sourceTree = "<group>";
+		};
+		507410AB264532D000B8E505 /* Storyboards */ = {
+			isa = PBXGroup;
+			children = (
+				5074105D26452EB700B8E505 /* Main.storyboard */,
+				5074106526452EBA00B8E505 /* LaunchScreen.storyboard */,
+			);
+			path = Storyboards;
+			sourceTree = "<group>";
+		};
+		507410AC264532DF00B8E505 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				5074105B26452EB700B8E505 /* ViewController.swift */,
+				5074113126458A4800B8E505 /* ViewModel.swift */,
+			);
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		507410AF2645334C00B8E505 /* Modules */ = {
+			isa = PBXGroup;
+			children = (
+				507410AB264532D000B8E505 /* Storyboards */,
+				507410B02645336400B8E505 /* Views */,
+				507410AC264532DF00B8E505 /* ViewControllers */,
+			);
+			path = Modules;
+			sourceTree = "<group>";
+		};
+		507410B02645336400B8E505 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				507410B12645339100B8E505 /* WidgetCollectionviewCell.swift */,
+				507410B22645339100B8E505 /* WidgetCollectionviewCell.xib */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		507410E026457EFB00B8E505 /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				50741115264583D000B8E505 /* Models */,
+				5074110A2645814900B8E505 /* Service */,
+				507410E126457F1400B8E505 /* APIErrrors.swift */,
+				507410E726457F3E00B8E505 /* AppEndpoint.swift */,
+				507410F126457F8900B8E505 /* ApiProvider.swift */,
+				507410F726457FD700B8E505 /* Container.swift */,
+			);
+			path = Network;
+			sourceTree = "<group>";
+		};
+		507410FD26457FFA00B8E505 /* AppConstants */ = {
+			isa = PBXGroup;
+			children = (
+				507410FE2645800D00B8E505 /* Global.swift */,
+			);
+			path = AppConstants;
+			sourceTree = "<group>";
+		};
+		50741108264580E500B8E505 /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				5074112B264584C400B8E505 /* DataExtension.swift */,
+			);
+			path = Extension;
+			sourceTree = "<group>";
+		};
+		50741109264580F300B8E505 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		5074110A2645814900B8E505 /* Service */ = {
+			isa = PBXGroup;
+			children = (
+				5074110B2645815400B8E505 /* WeatherService.swift */,
+			);
+			path = Service;
+			sourceTree = "<group>";
+		};
+		50741115264583D000B8E505 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				50741116264583E600B8E505 /* WheatherResponse.swift */,
+				507411212645844200B8E505 /* ErrorResponse.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -141,10 +328,12 @@
 				5074105026452EB700B8E505 /* Sources */,
 				5074105126452EB700B8E505 /* Frameworks */,
 				5074105226452EB700B8E505 /* Resources */,
+				507410A626452F8B00B8E505 /* Embed App Extensions */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				507410A126452F8B00B8E505 /* PBXTargetDependency */,
 			);
 			name = "Babel skills test";
 			productName = "Babel skills test";
@@ -187,6 +376,23 @@
 			productReference = 5074107826452EBB00B8E505 /* Babel skills testUITests.xctest */;
 			productType = "com.apple.product-type.bundle.ui-testing";
 		};
+		5074109026452F8900B8E505 /* Widget skills testExtension */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 507410A326452F8B00B8E505 /* Build configuration list for PBXNativeTarget "Widget skills testExtension" */;
+			buildPhases = (
+				5074108D26452F8900B8E505 /* Sources */,
+				5074108E26452F8900B8E505 /* Frameworks */,
+				5074108F26452F8900B8E505 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Widget skills testExtension";
+			productName = "Widget skills testExtension";
+			productReference = 5074109126452F8900B8E505 /* Widget skills testExtension.appex */;
+			productType = "com.apple.product-type.app-extension";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -207,6 +413,9 @@
 						CreatedOnToolsVersion = 12.3;
 						TestTargetID = 5074105326452EB700B8E505;
 					};
+					5074109026452F8900B8E505 = {
+						CreatedOnToolsVersion = 12.3;
+					};
 				};
 			};
 			buildConfigurationList = 5074104F26452EB600B8E505 /* Build configuration list for PBXProject "Babel skills test" */;
@@ -225,6 +434,7 @@
 				5074105326452EB700B8E505 /* Babel skills test */,
 				5074106C26452EBA00B8E505 /* Babel skills testTests */,
 				5074107726452EBB00B8E505 /* Babel skills testUITests */,
+				5074109026452F8900B8E505 /* Widget skills testExtension */,
 			);
 		};
 /* End PBXProject section */
@@ -234,6 +444,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				507410B42645339100B8E505 /* WidgetCollectionviewCell.xib in Resources */,
 				5074106726452EBA00B8E505 /* LaunchScreen.storyboard in Resources */,
 				5074106426452EBA00B8E505 /* Assets.xcassets in Resources */,
 				5074105F26452EB700B8E505 /* Main.storyboard in Resources */,
@@ -254,6 +465,14 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		5074108F26452F8900B8E505 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5074109C26452F8B00B8E505 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -261,10 +480,22 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				507410B32645339100B8E505 /* WidgetCollectionviewCell.swift in Sources */,
+				507410E226457F1400B8E505 /* APIErrrors.swift in Sources */,
+				507410E826457F3E00B8E505 /* AppEndpoint.swift in Sources */,
 				5074106226452EB700B8E505 /* Babel_skills_test.xcdatamodeld in Sources */,
+				5074112C264584C400B8E505 /* DataExtension.swift in Sources */,
+				5074110C2645815400B8E505 /* WeatherService.swift in Sources */,
+				5074113226458A4800B8E505 /* ViewModel.swift in Sources */,
 				5074105C26452EB700B8E505 /* ViewController.swift in Sources */,
 				5074105826452EB700B8E505 /* AppDelegate.swift in Sources */,
+				507410FF2645800D00B8E505 /* Global.swift in Sources */,
+				507410F226457F8900B8E505 /* ApiProvider.swift in Sources */,
+				507410F826457FD700B8E505 /* Container.swift in Sources */,
+				50741117264583E600B8E505 /* WheatherResponse.swift in Sources */,
+				5074109F26452F8B00B8E505 /* Widget_skills_test.intentdefinition in Sources */,
 				5074105A26452EB700B8E505 /* SceneDelegate.swift in Sources */,
+				507411222645844200B8E505 /* ErrorResponse.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -284,6 +515,15 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		5074108D26452F8900B8E505 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5074109E26452F8B00B8E505 /* Widget_skills_test.intentdefinition in Sources */,
+				5074109926452F8900B8E505 /* Widget_skills_test.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
@@ -296,6 +536,11 @@
 			isa = PBXTargetDependency;
 			target = 5074105326452EB700B8E505 /* Babel skills test */;
 			targetProxy = 5074107926452EBB00B8E505 /* PBXContainerItemProxy */;
+		};
+		507410A126452F8B00B8E505 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 5074109026452F8900B8E505 /* Widget skills testExtension */;
+			targetProxy = 507410A026452F8B00B8E505 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -438,8 +683,10 @@
 		5074108226452EBB00B8E505 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = "Babel skills test/Babel skills test.entitlements";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = CE53774E6S;
 				INFOPLIST_FILE = "Babel skills test/Info.plist";
@@ -457,8 +704,10 @@
 		5074108326452EBB00B8E505 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = "Babel skills test/Babel skills test.entitlements";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = CE53774E6S;
 				INFOPLIST_FILE = "Babel skills test/Info.plist";
@@ -557,6 +806,50 @@
 			};
 			name = Release;
 		};
+		507410A426452F8B00B8E505 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
+				CODE_SIGN_ENTITLEMENTS = "Widget skills testExtension.entitlements";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = CE53774E6S;
+				INFOPLIST_FILE = "Widget skills test/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.lotuslabs.work.Babel-skills-test.Widget-skills-test";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		507410A526452F8B00B8E505 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
+				CODE_SIGN_ENTITLEMENTS = "Widget skills testExtension.entitlements";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = CE53774E6S;
+				INFOPLIST_FILE = "Widget skills test/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.lotuslabs.work.Babel-skills-test.Widget-skills-test";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -592,6 +885,15 @@
 			buildConfigurations = (
 				5074108826452EBB00B8E505 /* Debug */,
 				5074108926452EBB00B8E505 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		507410A326452F8B00B8E505 /* Build configuration list for PBXNativeTarget "Widget skills testExtension" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				507410A426452F8B00B8E505 /* Debug */,
+				507410A526452F8B00B8E505 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
