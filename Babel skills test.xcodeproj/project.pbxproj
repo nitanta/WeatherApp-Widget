@@ -1,0 +1,615 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		5074105826452EB700B8E505 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5074105726452EB700B8E505 /* AppDelegate.swift */; };
+		5074105A26452EB700B8E505 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5074105926452EB700B8E505 /* SceneDelegate.swift */; };
+		5074105C26452EB700B8E505 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5074105B26452EB700B8E505 /* ViewController.swift */; };
+		5074105F26452EB700B8E505 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5074105D26452EB700B8E505 /* Main.storyboard */; };
+		5074106226452EB700B8E505 /* Babel_skills_test.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 5074106026452EB700B8E505 /* Babel_skills_test.xcdatamodeld */; };
+		5074106426452EBA00B8E505 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5074106326452EBA00B8E505 /* Assets.xcassets */; };
+		5074106726452EBA00B8E505 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5074106526452EBA00B8E505 /* LaunchScreen.storyboard */; };
+		5074107226452EBB00B8E505 /* Babel_skills_testTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5074107126452EBB00B8E505 /* Babel_skills_testTests.swift */; };
+		5074107D26452EBB00B8E505 /* Babel_skills_testUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5074107C26452EBB00B8E505 /* Babel_skills_testUITests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		5074106E26452EBB00B8E505 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 5074104C26452EB600B8E505 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 5074105326452EB700B8E505;
+			remoteInfo = "Babel skills test";
+		};
+		5074107926452EBB00B8E505 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 5074104C26452EB600B8E505 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 5074105326452EB700B8E505;
+			remoteInfo = "Babel skills test";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		5074105426452EB700B8E505 /* Babel skills test.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Babel skills test.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		5074105726452EB700B8E505 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		5074105926452EB700B8E505 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		5074105B26452EB700B8E505 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		5074105E26452EB700B8E505 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		5074106126452EB700B8E505 /* Babel_skills_test.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Babel_skills_test.xcdatamodel; sourceTree = "<group>"; };
+		5074106326452EBA00B8E505 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		5074106626452EBA00B8E505 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		5074106826452EBA00B8E505 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		5074106D26452EBA00B8E505 /* Babel skills testTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Babel skills testTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		5074107126452EBB00B8E505 /* Babel_skills_testTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Babel_skills_testTests.swift; sourceTree = "<group>"; };
+		5074107326452EBB00B8E505 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		5074107826452EBB00B8E505 /* Babel skills testUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Babel skills testUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		5074107C26452EBB00B8E505 /* Babel_skills_testUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Babel_skills_testUITests.swift; sourceTree = "<group>"; };
+		5074107E26452EBB00B8E505 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		5074105126452EB700B8E505 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		5074106A26452EBA00B8E505 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		5074107526452EBB00B8E505 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		5074104B26452EB600B8E505 = {
+			isa = PBXGroup;
+			children = (
+				5074105626452EB700B8E505 /* Babel skills test */,
+				5074107026452EBB00B8E505 /* Babel skills testTests */,
+				5074107B26452EBB00B8E505 /* Babel skills testUITests */,
+				5074105526452EB700B8E505 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		5074105526452EB700B8E505 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				5074105426452EB700B8E505 /* Babel skills test.app */,
+				5074106D26452EBA00B8E505 /* Babel skills testTests.xctest */,
+				5074107826452EBB00B8E505 /* Babel skills testUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		5074105626452EB700B8E505 /* Babel skills test */ = {
+			isa = PBXGroup;
+			children = (
+				5074105726452EB700B8E505 /* AppDelegate.swift */,
+				5074105926452EB700B8E505 /* SceneDelegate.swift */,
+				5074105B26452EB700B8E505 /* ViewController.swift */,
+				5074105D26452EB700B8E505 /* Main.storyboard */,
+				5074106326452EBA00B8E505 /* Assets.xcassets */,
+				5074106526452EBA00B8E505 /* LaunchScreen.storyboard */,
+				5074106826452EBA00B8E505 /* Info.plist */,
+				5074106026452EB700B8E505 /* Babel_skills_test.xcdatamodeld */,
+			);
+			path = "Babel skills test";
+			sourceTree = "<group>";
+		};
+		5074107026452EBB00B8E505 /* Babel skills testTests */ = {
+			isa = PBXGroup;
+			children = (
+				5074107126452EBB00B8E505 /* Babel_skills_testTests.swift */,
+				5074107326452EBB00B8E505 /* Info.plist */,
+			);
+			path = "Babel skills testTests";
+			sourceTree = "<group>";
+		};
+		5074107B26452EBB00B8E505 /* Babel skills testUITests */ = {
+			isa = PBXGroup;
+			children = (
+				5074107C26452EBB00B8E505 /* Babel_skills_testUITests.swift */,
+				5074107E26452EBB00B8E505 /* Info.plist */,
+			);
+			path = "Babel skills testUITests";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		5074105326452EB700B8E505 /* Babel skills test */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 5074108126452EBB00B8E505 /* Build configuration list for PBXNativeTarget "Babel skills test" */;
+			buildPhases = (
+				5074105026452EB700B8E505 /* Sources */,
+				5074105126452EB700B8E505 /* Frameworks */,
+				5074105226452EB700B8E505 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Babel skills test";
+			productName = "Babel skills test";
+			productReference = 5074105426452EB700B8E505 /* Babel skills test.app */;
+			productType = "com.apple.product-type.application";
+		};
+		5074106C26452EBA00B8E505 /* Babel skills testTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 5074108426452EBB00B8E505 /* Build configuration list for PBXNativeTarget "Babel skills testTests" */;
+			buildPhases = (
+				5074106926452EBA00B8E505 /* Sources */,
+				5074106A26452EBA00B8E505 /* Frameworks */,
+				5074106B26452EBA00B8E505 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				5074106F26452EBB00B8E505 /* PBXTargetDependency */,
+			);
+			name = "Babel skills testTests";
+			productName = "Babel skills testTests";
+			productReference = 5074106D26452EBA00B8E505 /* Babel skills testTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		5074107726452EBB00B8E505 /* Babel skills testUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 5074108726452EBB00B8E505 /* Build configuration list for PBXNativeTarget "Babel skills testUITests" */;
+			buildPhases = (
+				5074107426452EBB00B8E505 /* Sources */,
+				5074107526452EBB00B8E505 /* Frameworks */,
+				5074107626452EBB00B8E505 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				5074107A26452EBB00B8E505 /* PBXTargetDependency */,
+			);
+			name = "Babel skills testUITests";
+			productName = "Babel skills testUITests";
+			productReference = 5074107826452EBB00B8E505 /* Babel skills testUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		5074104C26452EB600B8E505 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1230;
+				LastUpgradeCheck = 1230;
+				TargetAttributes = {
+					5074105326452EB700B8E505 = {
+						CreatedOnToolsVersion = 12.3;
+					};
+					5074106C26452EBA00B8E505 = {
+						CreatedOnToolsVersion = 12.3;
+						TestTargetID = 5074105326452EB700B8E505;
+					};
+					5074107726452EBB00B8E505 = {
+						CreatedOnToolsVersion = 12.3;
+						TestTargetID = 5074105326452EB700B8E505;
+					};
+				};
+			};
+			buildConfigurationList = 5074104F26452EB600B8E505 /* Build configuration list for PBXProject "Babel skills test" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 5074104B26452EB600B8E505;
+			productRefGroup = 5074105526452EB700B8E505 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				5074105326452EB700B8E505 /* Babel skills test */,
+				5074106C26452EBA00B8E505 /* Babel skills testTests */,
+				5074107726452EBB00B8E505 /* Babel skills testUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		5074105226452EB700B8E505 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5074106726452EBA00B8E505 /* LaunchScreen.storyboard in Resources */,
+				5074106426452EBA00B8E505 /* Assets.xcassets in Resources */,
+				5074105F26452EB700B8E505 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		5074106B26452EBA00B8E505 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		5074107626452EBB00B8E505 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		5074105026452EB700B8E505 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5074106226452EB700B8E505 /* Babel_skills_test.xcdatamodeld in Sources */,
+				5074105C26452EB700B8E505 /* ViewController.swift in Sources */,
+				5074105826452EB700B8E505 /* AppDelegate.swift in Sources */,
+				5074105A26452EB700B8E505 /* SceneDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		5074106926452EBA00B8E505 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5074107226452EBB00B8E505 /* Babel_skills_testTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		5074107426452EBB00B8E505 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5074107D26452EBB00B8E505 /* Babel_skills_testUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		5074106F26452EBB00B8E505 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 5074105326452EB700B8E505 /* Babel skills test */;
+			targetProxy = 5074106E26452EBB00B8E505 /* PBXContainerItemProxy */;
+		};
+		5074107A26452EBB00B8E505 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 5074105326452EB700B8E505 /* Babel skills test */;
+			targetProxy = 5074107926452EBB00B8E505 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		5074105D26452EB700B8E505 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				5074105E26452EB700B8E505 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		5074106526452EBA00B8E505 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				5074106626452EBA00B8E505 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		5074107F26452EBB00B8E505 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.3;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		5074108026452EBB00B8E505 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.3;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		5074108226452EBB00B8E505 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = CE53774E6S;
+				INFOPLIST_FILE = "Babel skills test/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.lotuslabs.work.Babel-skills-test";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		5074108326452EBB00B8E505 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = CE53774E6S;
+				INFOPLIST_FILE = "Babel skills test/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.lotuslabs.work.Babel-skills-test";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		5074108526452EBB00B8E505 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = CE53774E6S;
+				INFOPLIST_FILE = "Babel skills testTests/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 14.3;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.lotuslabs.work.Babel-skills-testTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Babel skills test.app/Babel skills test";
+			};
+			name = Debug;
+		};
+		5074108626452EBB00B8E505 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = CE53774E6S;
+				INFOPLIST_FILE = "Babel skills testTests/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 14.3;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.lotuslabs.work.Babel-skills-testTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Babel skills test.app/Babel skills test";
+			};
+			name = Release;
+		};
+		5074108826452EBB00B8E505 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = CE53774E6S;
+				INFOPLIST_FILE = "Babel skills testUITests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.lotuslabs.work.Babel-skills-testUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = "Babel skills test";
+			};
+			name = Debug;
+		};
+		5074108926452EBB00B8E505 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = CE53774E6S;
+				INFOPLIST_FILE = "Babel skills testUITests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.lotuslabs.work.Babel-skills-testUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = "Babel skills test";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		5074104F26452EB600B8E505 /* Build configuration list for PBXProject "Babel skills test" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				5074107F26452EBB00B8E505 /* Debug */,
+				5074108026452EBB00B8E505 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		5074108126452EBB00B8E505 /* Build configuration list for PBXNativeTarget "Babel skills test" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				5074108226452EBB00B8E505 /* Debug */,
+				5074108326452EBB00B8E505 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		5074108426452EBB00B8E505 /* Build configuration list for PBXNativeTarget "Babel skills testTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				5074108526452EBB00B8E505 /* Debug */,
+				5074108626452EBB00B8E505 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		5074108726452EBB00B8E505 /* Build configuration list for PBXNativeTarget "Babel skills testUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				5074108826452EBB00B8E505 /* Debug */,
+				5074108926452EBB00B8E505 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		5074106026452EB700B8E505 /* Babel_skills_test.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				5074106126452EB700B8E505 /* Babel_skills_test.xcdatamodel */,
+			);
+			currentVersion = 5074106126452EB700B8E505 /* Babel_skills_test.xcdatamodel */;
+			path = Babel_skills_test.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
+	};
+	rootObject = 5074104C26452EB600B8E505 /* Project object */;
+}
