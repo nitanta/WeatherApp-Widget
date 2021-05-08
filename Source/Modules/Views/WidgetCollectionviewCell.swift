@@ -26,15 +26,25 @@ class WidgetCollectionviewCell: UICollectionViewCell {
         setupUI()
     }
     
+    override func prepareForReuse() {
+        super.prepareForReuse()
+    }
+    
+    override func layoutSubviews() {
+        super.layoutSubviews()
+    }
+    
     func setupUI() {
+        backgroundImageView.layer.cornerRadius = 22
+        shadowView.addShadow(with: 22)
     }
     
     /// Get the image saved in the app group
     /// Image is saved in app group so that it can be accessed by both the app and the widget
     /// - Returns: Image saved in the container
     func getImageInFiles() -> UIImage? {
-        guard let containerURL = FileManager.default.containerURL(forSecurityApplicationGroupIdentifier: "group.com.lotuslabs.weatherapp") else { return nil }
-        let imageFileURL = containerURL.appendingPathComponent("widgetbackground.jpg")
+        guard let containerURL = FileManager.default.containerURL(forSecurityApplicationGroupIdentifier: Global.containerName) else { return nil }
+        let imageFileURL = containerURL.appendingPathComponent(Global.backgroundImageName)
         do {
             let data = try Data(contentsOf: imageFileURL)
             return UIImage(data: data)
@@ -66,10 +76,7 @@ class WidgetCollectionviewCell: UICollectionViewCell {
         self.imageTopConstraint.constant = type.imageTop
         self.locationLabel.font = UIFont(name: FontName.fontRoundedBold, size: type.labelFontSize)
         
-        self.layoutIfNeeded()
-        
-        backgroundImageView.layer.cornerRadius = 22
-        shadowView.dropShadow(cornerRadius: 22)
+        self.setNeedsLayout()
     }
 
 }

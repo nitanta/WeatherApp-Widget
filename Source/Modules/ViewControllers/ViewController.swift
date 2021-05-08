@@ -42,7 +42,6 @@ class ViewController: UIViewController {
         changeButton.clipsToBounds = true
         
         pageControl.numberOfPages = ViewType.allCases.count
-        self.hideShowView(hide: true, views: [collectionView, pageControl, changeButton])
     }
     
     /// Handles showing and hiding views
@@ -61,15 +60,6 @@ class ViewController: UIViewController {
             guard let self = self else { return }
             if error != nil {
                 self.showAlert(message: error ?? "", buttonAction: nil)
-            }
-        }.store(in: &bag)
-        
-        viewModel.isLoading.sink { [weak self] (loading) in
-            guard let self = self else { return }
-            if loading {
-                self.activityIndicator.startAnimating()
-            } else {
-                self.activityIndicator.stopAnimating()
             }
         }.store(in: &bag)
         
@@ -92,10 +82,6 @@ class ViewController: UIViewController {
 // MARK: - Collection view handlers
 extension ViewController: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     public func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        if viewModel.isLoading.value {
-            return 0
-        }
-        self.hideShowView(hide: false, views: [collectionView, pageControl, changeButton])
         return ViewType.allCases.count
     }
     
@@ -110,7 +96,7 @@ extension ViewController: UICollectionViewDelegate, UICollectionViewDataSource, 
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return CGSize(width: self.collectionView.frame.width, height: self.collectionView.frame.height)
+        return collectionView.bounds.size
     }
     
     func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
@@ -125,14 +111,20 @@ extension ViewController: UICollectionViewDelegate, UICollectionViewDataSource, 
     /// Get name of the icon from the response
     /// - Returns: icon name
     func getWeatherIcon() -> String {
+        if viewModel.isLoading.value {
+            return ""
+        }
         guard let weather = self.viewModel.datasource.value!.weather.first else { return "" }
-        let image = WeatherType(rawValue: weather.main)?.imageName
-        return image ?? ""
+        let image = WeatherType(raw: weather.main, desc: weather.weatherDescription).imageName
+        return image
     }
     
     /// Get the location for which the weather is reached.
     /// - Returns: location
     func getLocationName() -> String {
+        if viewModel.isLoading.value {
+            return "Loading ..."
+        }
         return self.viewModel.datasource.value!.name + ", " + self.viewModel.datasource.value!.sys.country
     }
 }

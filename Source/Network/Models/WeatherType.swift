@@ -7,20 +7,34 @@
 
 import Foundation
 
-enum WeatherType: String {
-    case clouds = "Clouds"
-    case thunderStorm = "Thunderstorm"
-    case drizzle = "Drizzle"
-    case rain = "Rain"
-    case snow = "Snow"
-    case sunny = "Clear"
+enum WeatherType {
+    case clouds(String)
+    case thunderStorm
+    case drizzle
+    case rain
+    case snow
+    case sunny
+    
+    init(raw: String, desc: String) {
+        switch raw {
+        case "Clouds": self = .clouds(desc)
+        case "Thunderstorm": self = .thunderStorm
+        case "Drizzle": self = .drizzle
+        case "Rain": self = .rain
+        case "Snow": self = .snow
+        case "Clear": self = .sunny
+        default: self = .sunny
+        }
+    }
     
     var imageName: String {
         switch self {
-        case .clouds: return "ic-cloudy"
-        case .thunderStorm: return "ic-rainy"
-        case .drizzle: return "ic-rainy"
-        case .rain: return "ic-rainy"
+        case .clouds(let desc):
+            if desc == "overcast clouds" {
+                return "ic-cloudy"
+            }
+            return "ic-partlycloudy"
+        case .drizzle, .rain, .thunderStorm: return "ic-rainy"
         case .snow: return "ic-snowy"
         case .sunny: return "ic-sunny"
         }

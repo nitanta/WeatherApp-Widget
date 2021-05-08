@@ -19,21 +19,26 @@ class LocationManager: NSObject, CLLocationManagerDelegate {
         self.setupLocation()
     }
     
-    func setupLocation() {
+    private func setupLocation() {
         locationManager.delegate = self
         locationManager.desiredAccuracy = kCLLocationAccuracyBest
-        switch locationManager.authorizationStatus {
-        case .denied, .notDetermined, .restricted:
-            locationManager.requestWhenInUseAuthorization()
-        default: break
-        }
+        self.checkAuthorixation()
         if CLLocationManager.locationServicesEnabled(){
             locationManager.startUpdatingLocation()
         }
     }
     
+    private func checkAuthorixation() {
+        switch locationManager.authorizationStatus {
+        case .denied, .notDetermined, .restricted:
+            locationManager.requestWhenInUseAuthorization()
+        default: break
+        }
+    }
+    
     func fetchLocation(handler: @escaping (Result<CLLocationCoordinate2D, Error>) -> Void) {
         self.handler = handler
+        self.checkAuthorixation()
         self.locationManager.requestLocation()
     }
 

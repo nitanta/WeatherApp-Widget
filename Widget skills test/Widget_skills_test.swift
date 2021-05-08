@@ -15,8 +15,8 @@ struct Provider: IntentTimelineProvider {
     var weatherManager = WidgetNetworkManager(service: WeatherService())
     
     func getImageInFiles() -> UIImage {
-        guard let containerURL = FileManager.default.containerURL(forSecurityApplicationGroupIdentifier: "group.com.lotuslabs.weatherapp") else { return UIImage() }
-        let imageFileURL = containerURL.appendingPathComponent("widgetbackground.jpg")
+        guard let containerURL = FileManager.default.containerURL(forSecurityApplicationGroupIdentifier: Global.containerName) else { return UIImage() }
+        let imageFileURL = containerURL.appendingPathComponent(Global.backgroundImageName)
         do {
             let data = try Data(contentsOf: imageFileURL)
             return UIImage(data: data) ?? UIImage()
@@ -43,13 +43,13 @@ struct Provider: IntentTimelineProvider {
                     var iconName: String = ""
                     let locationName: String = response.name + ", " + response.sys.country
                     if let weather = response.weather.first {
-                        iconName = WeatherType(rawValue: weather.main)?.imageName ?? ""
+                        iconName = WeatherType(raw: weather.main, desc: weather.weatherDescription).imageName
                     }
                     let backgroundImage = getImageInFiles()
                     let entries = [
                         WeatherDataEntry(backgroundImage: backgroundImage, weatherImage: iconName, location: locationName)
                     ]
-                    let timeline = Timeline(entries: entries, policy: .after(Date(timeIntervalSinceNow: 10)))
+                    let timeline = Timeline(entries: entries, policy: .after(Date(timeIntervalSinceNow: 60)))
                     completion(timeline)
                 }
             case .failure(let error):
@@ -57,7 +57,7 @@ struct Provider: IntentTimelineProvider {
                 let entries = [
                     WeatherDataEntry(errorMessage: error.localizedDescription, backgroundImage: backgroundImage)
                 ]
-                let timeline = Timeline(entries: entries, policy: .after(Date(timeIntervalSinceNow: 10)))
+                let timeline = Timeline(entries: entries, policy: .after(Date(timeIntervalSinceNow: 60)))
                 completion(timeline)
             }
         }
@@ -99,6 +99,9 @@ struct Widget_skills_testEntryView : View {
         ZStack {
             
             Image(uiImage: entry.backgroundImage)
+                .resizable()
+                .scaledToFill()
+                .clipped()
             
             if entry.isLoading {
                 

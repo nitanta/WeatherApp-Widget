@@ -12,9 +12,9 @@ import CoreLocation
 
 final class ViewModel: ObservableObject {
     
-    var isLoading: CurrentValueSubject<Bool, Never> = CurrentValueSubject(false)
-    var error: CurrentValueSubject<String?, Never> = CurrentValueSubject(nil)
-    var datasource: CurrentValueSubject<WheatherResponse?, Never> = CurrentValueSubject(nil)
+    private(set) var isLoading: CurrentValueSubject<Bool, Never> = CurrentValueSubject(false)
+    private(set) var error: CurrentValueSubject<String?, Never> = CurrentValueSubject(nil)
+    private(set) var datasource: CurrentValueSubject<WheatherResponse?, Never> = CurrentValueSubject(nil)
 
     private var bag = Set<AnyCancellable>()
     
@@ -29,9 +29,7 @@ final class ViewModel: ObservableObject {
     /// After location fetch it calls the weather API for data
     /// - Parameter finished: completion block after process completion
     func getLocationAndWeather(finished: (() -> Void)? = nil) {
-        if datasource.value == nil {
-            self.isLoading.send(true)
-        }
+        self.isLoading.send(true)
         self.locationManager.fetchLocation { [weak self] (location) in
             guard let self = self else { return }
             switch location {

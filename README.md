@@ -33,3 +33,6 @@ Source in the main target consists of these groups:
 Widget target consists of a class for handling network resouces.
 
 Also, some classes are shared across multiple targets.
+
+
+For both the main app and the widget, data gets refreshed every 60 seconds.

@@ -15,4 +15,10 @@ struct Global {
     static var apiKey: String {
         return "7f71e1cecf0a5a766bf18f0b8f423290"
     }
+    static var containerName: String {
+        return "group.com.lotuslabs.weatherapp"
+    }
+    static var backgroundImageName: String {
+        return "widgetbackground.jpg"
+    }
 }
