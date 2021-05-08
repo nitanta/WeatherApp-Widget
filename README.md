@@ -36,3 +36,5 @@ Also, some classes are shared across multiple targets.
 
 
 For both the main app and the widget, data gets refreshed every 60 seconds.
+
+Supports iOS 14 - for widget kit support
