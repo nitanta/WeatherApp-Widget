@@ -61,6 +61,7 @@
 		509C286D26467FC400053131 /* ViewType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 509C286C26467FC400053131 /* ViewType.swift */; };
 		509C28722646931800053131 /* WeatherType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 509C281C26464A6200053131 /* WeatherType.swift */; };
 		509C28772646931B00053131 /* ViewType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 509C286C26467FC400053131 /* ViewType.swift */; };
+		509C288F2646B03200053131 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 509C288E2646B03200053131 /* README.md */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -147,6 +148,7 @@
 		509C284F264667B600053131 /* FontName.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FontName.swift; sourceTree = "<group>"; };
 		509C28562646689A00053131 /* UIViewExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewExtension.swift; sourceTree = "<group>"; };
 		509C286C26467FC400053131 /* ViewType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewType.swift; sourceTree = "<group>"; };
+		509C288E2646B03200053131 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -376,6 +378,7 @@
 		509C2863264673DD00053131 /* Source */ = {
 			isa = PBXGroup;
 			children = (
+				509C288E2646B03200053131 /* README.md */,
 				509C2822264657EC00053131 /* Designs */,
 				509C28122646442000053131 /* Managers */,
 				50741108264580E500B8E505 /* Extension */,
@@ -518,6 +521,7 @@
 				5074105F26452EB700B8E505 /* Main.storyboard in Resources */,
 				509C283B2646655400053131 /* SF-Pro-Rounded-Bold.otf in Resources */,
 				509C28422646656B00053131 /* SF-Pro-Rounded-Regular.otf in Resources */,
+				509C288F2646B03200053131 /* README.md in Resources */,
 				509C28492646665500053131 /* SF-Pro-Text-Regular.otf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
