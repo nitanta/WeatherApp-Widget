@@ -14,16 +14,20 @@ class WidgetCollectionviewCell: UICollectionViewCell {
     @IBOutlet weak var backgroundImageView: UIImageView!
     @IBOutlet weak var wrapperView: UIView!
     
+    @IBOutlet weak var heightConstraint: NSLayoutConstraint!
+    @IBOutlet weak var widthConstraint: NSLayoutConstraint!
+    @IBOutlet weak var imageHeightConstraint: NSLayoutConstraint!
+    @IBOutlet weak var imageLeadingContstraint: NSLayoutConstraint!
+    @IBOutlet weak var imageTopConstraint: NSLayoutConstraint!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         setupUI()
     }
     
     func setupUI() {
-        layer.cornerRadius = 10
-        clipsToBounds = true
-        
-        
+        backgroundImageView.layer.cornerRadius = 22
+        backgroundImageView.dropShadow()
     }
     
     func getImageInFiles() -> UIImage? {
@@ -38,10 +42,22 @@ class WidgetCollectionviewCell: UICollectionViewCell {
         }
     }
     
-    func configure(weatherImage: UIImage, location: String) {
+    func configure(weatherImage: String, location: String) {
+        let background = self.getImageInFiles()
+        self.locationLabel.textColor = background != nil ? .white : .blue
         self.backgroundImageView.image = self.getImageInFiles()
-        self.weatherImageView.image = weatherImage
+        self.weatherImageView.image = UIImage(named: weatherImage)
         self.locationLabel.text = location
+    }
+    
+    func changeSize(type: ViewType) {
+        self.imageHeightConstraint.constant = type.imageSize.height
+        self.widthConstraint.constant = type.containerSize.width
+        self.heightConstraint.constant = type.containerSize.height
+        self.imageLeadingContstraint.constant = type.imageLeading
+        self.imageTopConstraint.constant = type.imageTop
+        self.locationLabel.font = UIFont(name: FontName.fontRoundedBold, size: type.labelFontSize)
+        self.layoutIfNeeded()
     }
 
 }

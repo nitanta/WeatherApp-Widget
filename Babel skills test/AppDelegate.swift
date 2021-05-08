@@ -7,13 +7,12 @@
 
 import UIKit
 import CoreData
-import BackgroundTasks
 
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
     
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-        registerBackgroundTask()
+        self.setupNavigationUI()
         return true
     }
 
@@ -51,33 +50,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 }
 
 extension AppDelegate {
-    func registerBackgroundTask() {
-        BGTaskScheduler.shared.register(forTaskWithIdentifier: "com.lotuslabs.weatherDataRefreshIdentifier", using: .main) { (taks) in
-            guard let task = taks as? BGAppRefreshTask else { return }
-            self.handleAppRefreshTask(task: task)
-        }
-    }
-    
-    func handleAppRefreshTask(task: BGAppRefreshTask) {
-        let viewModel = ViewModel(service: WeatherService())
-        task.expirationHandler = {
-            task.setTaskCompleted(success: false)
-        }
-        viewModel.getWeatherData {
-            task.setTaskCompleted(success: true)
-        }
-        scheduleBackgroundWeatherFetch()
-    }
-    
-    func scheduleBackgroundWeatherFetch() {
-        let weatherFetchTask = BGAppRefreshTaskRequest(identifier: "com.lotuslabs.weatherDataRefreshIdentifier")
-        weatherFetchTask.earliestBeginDate = Date(timeIntervalSinceNow: 60)
-        do {
-            try BGTaskScheduler.shared.submit(weatherFetchTask)
-            debugPrint("Submit background task")
-        } catch {
-            debugPrint("Unable to submit task: \(error.localizedDescription)")
-        }
+    func setupNavigationUI() {
+        UINavigationBar.appearance().titleTextAttributes = [
+            NSAttributedString.Key.foregroundColor: UIColor.black,
+            NSAttributedString.Key.font: UIFont(name: FontName.fontTextRegular, size: 17)!
+        ]
     }
 }
-

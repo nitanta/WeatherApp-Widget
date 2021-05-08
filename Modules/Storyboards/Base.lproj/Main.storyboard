@@ -7,6 +7,11 @@
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
+    <customFonts key="customFonts">
+        <array key="SF-Pro-Text-Regular.otf">
+            <string>SFProText-Regular</string>
+        </array>
+    </customFonts>
     <scenes>
         <!--Weather Widget-->
         <scene sceneID="tne-QT-ifu">
@@ -16,14 +21,14 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="OHp-Ul-tKY">
-                                <rect key="frame" x="0.0" y="332" width="414" height="286"/>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" pagingEnabled="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="OHp-Ul-tKY">
+                                <rect key="frame" x="0.0" y="188" width="414" height="360"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="414" id="AxS-VR-YJM"/>
-                                    <constraint firstAttribute="height" constant="286" id="Ey2-ZR-5e8"/>
+                                    <constraint firstAttribute="height" constant="360" id="Ey2-ZR-5e8"/>
                                 </constraints>
-                                <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="zCs-HL-dg9">
+                                <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="10" minimumInteritemSpacing="10" id="zCs-HL-dg9">
                                     <size key="itemSize" width="128" height="128"/>
                                     <size key="headerReferenceSize" width="0.0" height="0.0"/>
                                     <size key="footerReferenceSize" width="0.0" height="0.0"/>
@@ -32,7 +37,7 @@
                                 <cells/>
                             </collectionView>
                             <pageControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="3" translatesAutoresizingMaskIntoConstraints="NO" id="tdk-Sc-iMa">
-                                <rect key="frame" x="145.5" y="658" width="123" height="30"/>
+                                <rect key="frame" x="145.5" y="548" width="123" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="123" id="fUa-gi-EDa"/>
                                     <constraint firstAttribute="height" constant="30" id="ynK-wZ-N9m"/>
@@ -40,8 +45,16 @@
                                 <color key="pageIndicatorTintColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <color key="currentPageIndicatorTintColor" systemColor="labelColor"/>
                             </pageControl>
+                            <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="large" translatesAutoresizingMaskIntoConstraints="NO" id="wSZ-d8-D9a">
+                                <rect key="frame" x="197" y="465" width="20" height="20"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="20" id="f6G-X4-PLu"/>
+                                    <constraint firstAttribute="width" constant="20" id="jaC-2d-Wun"/>
+                                </constraints>
+                                <color key="color" systemColor="labelColor"/>
+                            </activityIndicatorView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="d9W-Ls-RP6">
-                                <rect key="frame" x="20" y="708" width="374" height="50"/>
+                                <rect key="frame" x="20" y="608" width="374" height="50"/>
                                 <color key="backgroundColor" red="0.33333333333333331" green="0.6705882352941176" blue="0.40392156862745099" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="7dQ-HJ-FLE">
@@ -52,9 +65,10 @@
                                         </userDefinedRuntimeAttributes>
                                     </constraint>
                                 </constraints>
+                                <fontDescription key="fontDescription" name="SFProText-Regular" family="SF Pro Text" pointSize="18"/>
                                 <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="20" maxY="0.0"/>
-                                <state key="normal" title="Change Background" image="person.2.circle.fill" catalog="system">
+                                <state key="normal" title="Change Background" image="photo.fill" catalog="system">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
                                 <connections>
@@ -65,17 +79,20 @@
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" red="0.94509803920000002" green="0.93725490199999995" blue="0.8980392157" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
-                            <constraint firstItem="OHp-Ul-tKY" firstAttribute="centerY" secondItem="6Tk-OE-BBY" secondAttribute="centerY" id="68S-ld-Wnb"/>
-                            <constraint firstItem="tdk-Sc-iMa" firstAttribute="top" secondItem="OHp-Ul-tKY" secondAttribute="bottom" constant="40" id="IIg-ZB-jkR"/>
+                            <constraint firstItem="OHp-Ul-tKY" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="100" id="6mw-bF-AhF"/>
+                            <constraint firstItem="tdk-Sc-iMa" firstAttribute="top" secondItem="OHp-Ul-tKY" secondAttribute="bottom" id="IIg-ZB-jkR"/>
+                            <constraint firstItem="wSZ-d8-D9a" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="MES-7E-zUh"/>
                             <constraint firstItem="tdk-Sc-iMa" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="eeO-5I-rcd"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="d9W-Ls-RP6" secondAttribute="trailing" constant="20" id="f4n-aO-yIp"/>
-                            <constraint firstItem="d9W-Ls-RP6" firstAttribute="top" secondItem="tdk-Sc-iMa" secondAttribute="bottom" constant="20" id="hoL-ol-9hP"/>
+                            <constraint firstItem="wSZ-d8-D9a" firstAttribute="centerY" secondItem="6Tk-OE-BBY" secondAttribute="centerY" id="hRY-Wh-j63"/>
+                            <constraint firstItem="d9W-Ls-RP6" firstAttribute="top" secondItem="tdk-Sc-iMa" secondAttribute="bottom" constant="30" id="hoL-ol-9hP"/>
                             <constraint firstItem="d9W-Ls-RP6" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="nOn-re-HGJ"/>
                             <constraint firstItem="OHp-Ul-tKY" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="oks-Pf-T6x"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Weather Widget" id="VoM-Ty-lI8"/>
                     <connections>
+                        <outlet property="activityIndicator" destination="wSZ-d8-D9a" id="IWc-Qe-Qvk"/>
                         <outlet property="changeButton" destination="d9W-Ls-RP6" id="0Ow-5v-P1v"/>
                         <outlet property="collectionView" destination="OHp-Ul-tKY" id="njy-Dr-PVJ"/>
                         <outlet property="pageControl" destination="tdk-Sc-iMa" id="dz9-EM-177"/>
@@ -105,7 +122,7 @@
         </scene>
     </scenes>
     <resources>
-        <image name="person.2.circle.fill" catalog="system" width="128" height="121"/>
+        <image name="photo.fill" catalog="system" width="128" height="93"/>
         <systemColor name="labelColor">
             <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

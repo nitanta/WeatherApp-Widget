@@ -15,29 +15,41 @@ final class ViewModel: NSObject, ObservableObject {
     var isLoading: CurrentValueSubject<Bool, Never> = CurrentValueSubject(false)
     var error: CurrentValueSubject<String?, Never> = CurrentValueSubject(nil)
     var datasource: CurrentValueSubject<WheatherResponse?, Never> = CurrentValueSubject(nil)
-    var background: CurrentValueSubject<UIImage?, Never> = CurrentValueSubject(nil)
-    var currentLocation: CurrentValueSubject<CLLocationCoordinate2D?, Never> = CurrentValueSubject(nil)
 
     private var bag = Set<AnyCancellable>()
     
     let weatherService: WeatherServiceProtocol!
-    var locationManager: CLLocationManager!
+    var locationManager = LocationManager()
     
     init(service: WeatherServiceProtocol) {
         self.weatherService = service
         super.init()
-        self.setupLocation()
     }
     
-    func getWeatherData(finished: (() -> Void)? = nil) {
-       // guard let location = currentLocation.value else { return }
-        self.isLoading.send(true)
-        weatherService.getWeather(latitude: Float(35.0), longitude: Float(139.0))
+    func getLocationAndWeather(finished: (() -> Void)? = nil) {
+        if datasource.value == nil {
+            self.isLoading.send(true)
+        }
+        self.locationManager.fetchLocation { [weak self] (location) in
+            guard let self = self else { return }
+            switch location {
+            case .success(let coord):
+                self.getWeatherData(coordinate: coord, finished: finished)
+            case .failure(let error):
+                self.error.send(error.localizedDescription)
+            }
+        }
+    }
+    
+    private func getWeatherData(coordinate: CLLocationCoordinate2D, finished: (() -> Void)? = nil) {
+        weatherService.getWeather(latitude: Float(coordinate.latitude), longitude: Float(coordinate.longitude))
             .decode(type: ResponseOutput<WheatherResponse>.self, decoder: Container.jsonDecoder)
             .receive(on: RunLoop.main)
             .sink(receiveCompletion: { [weak self] (completion) in
                 guard let self = self else { return }
-                self.isLoading.send(false)
+                if self.datasource.value == nil {
+                    self.isLoading.send(false)
+                }
                 switch completion {
                 case .failure(let error):
                     self.error.send(error.localizedDescription)
@@ -56,30 +68,3 @@ final class ViewModel: NSObject, ObservableObject {
             }.store(in: &bag)
     }
 }
-
-extension ViewModel: CLLocationManagerDelegate {
-    
-    func setupLocation() {
-        locationManager = CLLocationManager()
-        locationManager.delegate = self
-        locationManager.desiredAccuracy = kCLLocationAccuracyBest
-        switch locationManager.authorizationStatus {
-        case .denied, .notDetermined, .restricted:
-            locationManager.requestWhenInUseAuthorization()
-        default: break
-        }
-        if CLLocationManager.locationServicesEnabled(){
-            locationManager.startUpdatingLocation()
-        }
-    }
-    
-    func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
-        guard let location = locations.first else { return }
-        self.currentLocation.send(location.coordinate)
-    }
-    
-    func locationManager(_ manager: CLLocationManager, didFailWithError error: Error) {
-        self.error.send(error.localizedDescription)
-    }
-}
-

@@ -6,7 +6,6 @@
 //
 
 import UIKit
-import BackgroundTasks
 
 class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
@@ -14,7 +13,6 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
 
     func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
-        BGTaskScheduler.shared.cancelAllTaskRequests()
         guard let _ = (scene as? UIWindowScene) else { return }
     }
 
@@ -28,7 +26,6 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
     func sceneDidEnterBackground(_ scene: UIScene) {
         guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else { return }
-        appDelegate.scheduleBackgroundWeatherFetch()
         appDelegate.saveContext()
     }
 

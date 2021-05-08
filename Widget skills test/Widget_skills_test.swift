@@ -11,7 +11,7 @@ import Intents
 
 struct Provider: IntentTimelineProvider {
     
-    var locationManager = WidgetLocationManager()
+    var locationManager = LocationManager()
     var weatherManager = WidgetNetworkManager(service: WeatherService())
     
     func getImageInFiles() -> UIImage {
@@ -37,8 +37,15 @@ struct Provider: IntentTimelineProvider {
 
     func getTimeline(for configuration: ConfigurationIntent, in context: Context, completion: @escaping (Timeline<Entry>) -> ()) {
         locationManager.fetchLocation { (location) in
-            weatherManager.fetchData(location: location) { (response) in
-                let entries = [WeatherDataEntry(isLoading: false, backgroundImage: getImageInFiles(), weatherImage: "", location: response.name, date: Date())]
+            switch location {
+            case .success(let coord):
+                weatherManager.fetchData(location: coord) { (response) in
+                    let entries = [WeatherDataEntry(isLoading: false, backgroundImage: getImageInFiles(), weatherImage: "", location: response.name, date: Date())]
+                    let timeline = Timeline(entries: entries, policy: .after(Date(timeIntervalSinceNow: 60)))
+                    completion(timeline)
+                }
+            case .failure:
+                let entries = [WeatherDataEntry(isLoading: true, backgroundImage: getImageInFiles(), weatherImage: "", location: "", date: Date())]
                 let timeline = Timeline(entries: entries, policy: .after(Date(timeIntervalSinceNow: 60)))
                 completion(timeline)
             }
