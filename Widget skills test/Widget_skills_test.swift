@@ -107,10 +107,14 @@ struct Widget_skills_testEntryView : View {
                 
                 Text("Loading ...")
                     .font(.custom(FontName.fontRoundedBold, size: 18))
+                    .foregroundColor(self.getColor())
+
 
             } else if !entry.errorMessage.isEmpty {
                 Text(entry.errorMessage)
                     .font(.custom(FontName.fontRoundedBold, size: 18))
+                    .foregroundColor(self.getColor())
+
             } else {
                 
                 HStack {
