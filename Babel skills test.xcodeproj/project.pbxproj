@@ -59,6 +59,8 @@
 		509C28572646689A00053131 /* UIViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 509C28562646689A00053131 /* UIViewExtension.swift */; };
 		509C28582646689A00053131 /* UIViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 509C28562646689A00053131 /* UIViewExtension.swift */; };
 		509C286D26467FC400053131 /* ViewType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 509C286C26467FC400053131 /* ViewType.swift */; };
+		509C28722646931800053131 /* WeatherType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 509C281C26464A6200053131 /* WeatherType.swift */; };
+		509C28772646931B00053131 /* ViewType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 509C286C26467FC400053131 /* ViewType.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -610,7 +612,9 @@
 				509C27F226463E0300053131 /* Global.swift in Sources */,
 				509C2851264667B600053131 /* FontName.swift in Sources */,
 				509C280426463FD200053131 /* LocationManager.swift in Sources */,
+				509C28722646931800053131 /* WeatherType.swift in Sources */,
 				509C27E826463DFD00053131 /* ErrorResponse.swift in Sources */,
+				509C28772646931B00053131 /* ViewType.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -905,6 +909,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = CE53774E6S;
 				INFOPLIST_FILE = "Widget skills test/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -927,6 +932,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = CE53774E6S;
 				INFOPLIST_FILE = "Widget skills test/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

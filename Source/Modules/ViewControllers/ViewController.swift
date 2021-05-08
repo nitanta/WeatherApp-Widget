@@ -75,6 +75,7 @@ class ViewController: UIViewController {
         
         Timer.publish(every: TimeInterval(60), on: .main, in: .default).autoconnect().sink { [weak self] (_) in
             guard let self = self else { return }
+            debugPrint("Refreshing weather data")
             self.viewModel.getLocationAndWeather()
         }.store(in: &bag)
     }
@@ -86,7 +87,7 @@ extension ViewController: UICollectionViewDelegate, UICollectionViewDataSource, 
         if viewModel.isLoading.value {
             return 0
         }
-        self.hideShowView(hide: true, views: [collectionView, pageControl, changeButton])
+        self.hideShowView(hide: false, views: [collectionView, pageControl, changeButton])
         return ViewType.allCases.count
     }
     
@@ -96,7 +97,7 @@ extension ViewController: UICollectionViewDelegate, UICollectionViewDataSource, 
         }
         let type = ViewType.allCases[indexPath.row]
         cell.changeSize(type: type)
-        cell.configure(weatherImage: self.getWeatherIcon(), location: self.viewModel.datasource.value!.name )
+        cell.configure(weatherImage: self.getWeatherIcon(), location: self.getLocationName())
         return cell
     }
     
@@ -116,6 +117,10 @@ extension ViewController: UICollectionViewDelegate, UICollectionViewDataSource, 
         guard let weather = self.viewModel.datasource.value!.weather.first else { return "" }
         let image = WeatherType(rawValue: weather.main)?.imageName
         return image ?? ""
+    }
+    
+    func getLocationName() -> String {
+        return self.viewModel.datasource.value!.name + ", " + self.viewModel.datasource.value!.sys.country
     }
 }
 

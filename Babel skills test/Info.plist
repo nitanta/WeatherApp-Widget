@@ -35,9 +35,9 @@
 	<string>Weather Widget would like to access your phone library inorder to select image for background.</string>
 	<key>UIAppFonts</key>
 	<array>
-		<string>SF-Pro-Rounded-Bold</string>
-		<string>SF-Pro-Rounded-Regular</string>
-		<string>SF-Pro-Text-Regular</string>
+		<string>SF-Pro-Rounded-Bold.otf</string>
+		<string>SF-Pro-Rounded-Regular.otf</string>
+		<string>SF-Pro-Text-Regular.otf</string>
 	</array>
 	<key>UIApplicationSceneManifest</key>
 	<dict>

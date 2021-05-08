@@ -25,15 +25,15 @@
 		<key>NSExtensionPointIdentifier</key>
 		<string>com.apple.widgetkit-extension</string>
 	</dict>
-	<key>NSLocationWhenInUseUsageDescription</key>
-	<string>Weather Widget would like to access your location inorder to get the weather report.</string>
-	<key>NSLocationAlwaysAndWhenInUseUsageDescription</key>
-	<string>Weather Widget would like to access your location inorder to get the weather report.</string>
+    <key>NSLocationUsageDescription</key>
+    <string>1</string>
+    <key>NSWidgetWantsLocation</key>
+    <true/>
 	<key>UIAppFonts</key>
 	<array>
-		<string>SF-Pro-Rounded-Bold</string>
-		<string>SF-Pro-Rounded-Regular</string>
-		<string>SF-Pro-Text-Regular</string>
+		<string>SF-Pro-Rounded-Bold.otf</string>
+		<string>SF-Pro-Rounded-Regular.otf</string>
+		<string>SF-Pro-Text-Regular.otf</string>
 	</array>
 </dict>
 </plist>

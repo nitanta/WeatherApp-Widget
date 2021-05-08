@@ -47,9 +47,7 @@ final class ViewModel: NSObject, ObservableObject {
             .receive(on: RunLoop.main)
             .sink(receiveCompletion: { [weak self] (completion) in
                 guard let self = self else { return }
-                if self.datasource.value == nil {
-                    self.isLoading.send(false)
-                }
+                self.isLoading.send(false)
                 switch completion {
                 case .failure(let error):
                     self.error.send(error.localizedDescription)
