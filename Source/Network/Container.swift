@@ -7,6 +7,7 @@
 
 import Foundation
 
+//MARK: Used for parsing network response
 class Container {
     static let jsonDecoder: JSONDecoder = JSONDecoder()
     static let jsonEncoder: JSONEncoder = {

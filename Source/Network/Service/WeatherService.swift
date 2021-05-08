@@ -8,6 +8,7 @@
 import Combine
 import Foundation
 
+/// Protocol for handling network response
 protocol WeatherServiceProtocol {
     func getWeather(latitude: Float, longitude: Float) -> AnyPublisher<Data, Error>
 }

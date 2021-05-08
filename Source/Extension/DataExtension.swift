@@ -8,6 +8,7 @@
 import Foundation
 
 extension Data {
+    /// Converts the data into a raw string format
     var prettyPrintedJSONString: NSString? { /// NSString gives us a nice sanitized debugDescription
         guard let object = try? JSONSerialization.jsonObject(with: self, options: []),
               let data = try? JSONSerialization.data(withJSONObject: object, options: [.prettyPrinted]),

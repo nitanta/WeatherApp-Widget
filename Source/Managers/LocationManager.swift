@@ -8,6 +8,7 @@
 import CoreLocation
 import Foundation
 
+/// Handles location fetch and update.
 class LocationManager: NSObject, CLLocationManagerDelegate {
     let locationManager: CLLocationManager
     private var handler: ((Result<CLLocationCoordinate2D, Error>) -> Void)?

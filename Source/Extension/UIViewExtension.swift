@@ -8,6 +8,8 @@
 import UIKit
 
 extension UIView {
+    /// Adds drop shadow to the view
+    /// - Parameter cornerRadius: Corner radius, CGFloat
     func dropShadow(cornerRadius: CGFloat) {
         let shadowLayer = CAShapeLayer()
         

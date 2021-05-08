@@ -7,6 +7,7 @@
 
 import Foundation
 
+/// Font name used in the app
 struct FontName {
     static var fontRoundedRegular = "SFProRounded-Regular"
     static var fontRoundedBold = "SFProRounded-Bold"

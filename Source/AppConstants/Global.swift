@@ -7,6 +7,7 @@
 
 import Foundation
 
+//Make sure that constants are always included here.
 struct Global {
     static var baseUrl: String{
         return "https://api.openweathermap.org/"

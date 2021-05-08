@@ -9,6 +9,7 @@ import Foundation
 import Combine
 
 class APIProvider<Endpoint: EndpointProtocol> {
+    // MARK: - API call
     func getData(from endpoint: Endpoint) -> AnyPublisher<Data, Error> {
         guard let request = performRequest(for: endpoint) else {
             return Fail(error: APIProviderErrors.invalidURL)
@@ -73,7 +74,7 @@ class APIProvider<Endpoint: EndpointProtocol> {
     }
 }
 
-
+// MARK: - Generic request parsing
 enum ResponseOutput<T>: Decodable where T: Decodable {
    case success(T)
    case failure(ErrorResponse)

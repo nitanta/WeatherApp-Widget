@@ -10,7 +10,7 @@ import Combine
 import UIKit
 import CoreLocation
 
-final class ViewModel: NSObject, ObservableObject {
+final class ViewModel: ObservableObject {
     
     var isLoading: CurrentValueSubject<Bool, Never> = CurrentValueSubject(false)
     var error: CurrentValueSubject<String?, Never> = CurrentValueSubject(nil)
@@ -23,9 +23,11 @@ final class ViewModel: NSObject, ObservableObject {
     
     init(service: WeatherServiceProtocol) {
         self.weatherService = service
-        super.init()
     }
     
+    /// Function to get the current location
+    /// After location fetch it calls the weather API for data
+    /// - Parameter finished: completion block after process completion
     func getLocationAndWeather(finished: (() -> Void)? = nil) {
         if datasource.value == nil {
             self.isLoading.send(true)
@@ -41,6 +43,10 @@ final class ViewModel: NSObject, ObservableObject {
         }
     }
     
+    /// Repsonsible for the API call
+    /// - Parameters:
+    ///   - coordinate: current coordinate of the user
+    ///   - finished: completion block after process completion
     private func getWeatherData(coordinate: CLLocationCoordinate2D, finished: (() -> Void)? = nil) {
         weatherService.getWeather(latitude: Float(coordinate.latitude), longitude: Float(coordinate.longitude))
             .decode(type: ResponseOutput<WheatherResponse>.self, decoder: Container.jsonDecoder)

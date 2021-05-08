@@ -29,6 +29,9 @@ class WidgetCollectionviewCell: UICollectionViewCell {
     func setupUI() {
     }
     
+    /// Get the image saved in the app group
+    /// Image is saved in app group so that it can be accessed by both the app and the widget
+    /// - Returns: Image saved in the container
     func getImageInFiles() -> UIImage? {
         guard let containerURL = FileManager.default.containerURL(forSecurityApplicationGroupIdentifier: "group.com.lotuslabs.weatherapp") else { return nil }
         let imageFileURL = containerURL.appendingPathComponent("widgetbackground.jpg")
@@ -41,6 +44,10 @@ class WidgetCollectionviewCell: UICollectionViewCell {
         }
     }
     
+    /// Populates the cell with the data
+    /// - Parameters:
+    ///   - weatherImage: Icon for the current weather
+    ///   - location: Location for the user
     func configure(weatherImage: String, location: String) {
         let background = self.getImageInFiles()
         self.locationLabel.textColor = background != nil ? .white : .black
@@ -49,6 +56,8 @@ class WidgetCollectionviewCell: UICollectionViewCell {
         self.locationLabel.text = location
     }
     
+    /// Changes the view according to the view type
+    /// - Parameter type: View type eg: small, medium, large
     func changeSize(type: ViewType) {
         self.imageHeightConstraint.constant = type.imageSize.height
         self.widthConstraint.constant = type.containerSize.width

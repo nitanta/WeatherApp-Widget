@@ -31,6 +31,8 @@ class ViewController: UIViewController {
         viewModel.getLocationAndWeather()
     }
     
+    
+    /// Handling UI setup and cell registration
     func setupUI() {
         collectionView.delegate = self
         collectionView.dataSource = self
@@ -43,12 +45,17 @@ class ViewController: UIViewController {
         self.hideShowView(hide: true, views: [collectionView, pageControl, changeButton])
     }
     
+    /// Handles showing and hiding views
+    /// - Parameters:
+    ///   - hide: true/false - hiding or unding a array of views
+    ///   - views: lists of views to hide
     func hideShowView(hide: Bool, views: [UIView]) {
         views.forEach {
             $0.isHidden = hide
         }
     }
     
+    /// Bind viewmode with the controller
     func bind() {
         viewModel.error.sink { [weak self] (error) in
             guard let self = self else { return }
@@ -82,6 +89,7 @@ class ViewController: UIViewController {
     
 }
 
+// MARK: - Collection view handlers
 extension ViewController: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     public func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         if viewModel.isLoading.value {
@@ -113,17 +121,23 @@ extension ViewController: UICollectionViewDelegate, UICollectionViewDataSource, 
         pageControl.currentPage = Int(scrollView.contentOffset.x) / Int(scrollView.frame.width)
     }
     
+    
+    /// Get name of the icon from the response
+    /// - Returns: icon name
     func getWeatherIcon() -> String {
         guard let weather = self.viewModel.datasource.value!.weather.first else { return "" }
         let image = WeatherType(rawValue: weather.main)?.imageName
         return image ?? ""
     }
     
+    /// Get the location for which the weather is reached.
+    /// - Returns: location
     func getLocationName() -> String {
         return self.viewModel.datasource.value!.name + ", " + self.viewModel.datasource.value!.sys.country
     }
 }
 
+// MARK: - Image picker
 extension ViewController: UIImagePickerControllerDelegate & UINavigationControllerDelegate {
     
     private func openImagePicker(source: UIImagePickerController.SourceType) {
@@ -155,7 +169,7 @@ extension ViewController: UIImagePickerControllerDelegate & UINavigationControll
 
 }
 
-
+// MARK: - Pickers and alerts
 extension ViewController {
     func showAlert(title: String = "Weather Widget", message: String, buttonAction: (() -> ())?) {
         let alertController = UIAlertController(title: title, message: message, preferredStyle: .alert)
