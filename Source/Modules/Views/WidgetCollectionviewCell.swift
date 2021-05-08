@@ -13,6 +13,7 @@ class WidgetCollectionviewCell: UICollectionViewCell {
     @IBOutlet weak var weatherImageView: UIImageView!
     @IBOutlet weak var backgroundImageView: UIImageView!
     @IBOutlet weak var wrapperView: UIView!
+    @IBOutlet weak var shadowView: UIView!
     
     @IBOutlet weak var heightConstraint: NSLayoutConstraint!
     @IBOutlet weak var widthConstraint: NSLayoutConstraint!
@@ -26,8 +27,6 @@ class WidgetCollectionviewCell: UICollectionViewCell {
     }
     
     func setupUI() {
-        backgroundImageView.layer.cornerRadius = 22
-        backgroundImageView.dropShadow()
     }
     
     func getImageInFiles() -> UIImage? {
@@ -44,7 +43,7 @@ class WidgetCollectionviewCell: UICollectionViewCell {
     
     func configure(weatherImage: String, location: String) {
         let background = self.getImageInFiles()
-        self.locationLabel.textColor = background != nil ? .white : .blue
+        self.locationLabel.textColor = background != nil ? .white : .black
         self.backgroundImageView.image = self.getImageInFiles()
         self.weatherImageView.image = UIImage(named: weatherImage)
         self.locationLabel.text = location
@@ -57,7 +56,11 @@ class WidgetCollectionviewCell: UICollectionViewCell {
         self.imageLeadingContstraint.constant = type.imageLeading
         self.imageTopConstraint.constant = type.imageTop
         self.locationLabel.font = UIFont(name: FontName.fontRoundedBold, size: type.labelFontSize)
+        
         self.layoutIfNeeded()
+        
+        backgroundImageView.layer.cornerRadius = 22
+        shadowView.dropShadow(cornerRadius: 22)
     }
 
 }

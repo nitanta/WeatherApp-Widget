@@ -8,52 +8,6 @@
 import UIKit
 import Combine
 
-enum ViewType: CaseIterable {
-    case small
-    case medium
-    case large
-    
-    var containerSize: CGSize {
-        switch self {
-        case .small: return CGSize(width: 155, height: 155)
-        case .medium:  return CGSize(width: 330, height: 155)
-        case .large:  return CGSize(width: 330, height: 345)
-        }
-    }
-    
-    var imageSize: CGSize {
-        switch self {
-        case .small: return CGSize(width: 67, height: 67)
-        case .medium:  return CGSize(width: 82, height: 82)
-        case .large:  return CGSize(width: 155, height: 155)
-        }
-    }
-    
-    var imageLeading: CGFloat {
-        switch self {
-        case .small: return self.containerSize.width / 2 - self.imageSize.width / 2
-        case .medium: return 16
-        case .large:  return self.containerSize.width / 2 - self.imageSize.width / 2
-        }
-    }
-    
-    var imageTop: CGFloat {
-        switch self {
-        case .small: return 16
-        case .medium: return 16
-        case .large:  return 48
-        }
-    }
-    
-    var labelFontSize: CGFloat {
-        switch self {
-        case .small: return 18
-        case .medium: return 24
-        case .large:  return 32
-        }
-    }
-}
-
 class ViewController: UIViewController {
 
     let viewModel = ViewModel(service: WeatherService())
@@ -66,6 +20,8 @@ class ViewController: UIViewController {
     
     @IBAction func changeClicked(_ sender: Any) {
         self.showPickerActionSheet()
+    }
+    @IBAction func pageControlChange(_ sender: Any) {
     }
     
     override func viewDidLoad() {
@@ -140,17 +96,20 @@ extension ViewController: UICollectionViewDelegate, UICollectionViewDataSource, 
         }
         let type = ViewType.allCases[indexPath.row]
         cell.changeSize(type: type)
-        cell.configure(weatherImage: "ic-cloudy", location: "Bharatpur, Chitwan")
-        //cell.configure(weatherImage: self.getWeatherIcon(), location: self.viewModel.datasource.value!.name )
+        cell.configure(weatherImage: self.getWeatherIcon(), location: self.viewModel.datasource.value!.name )
         return cell
     }
     
-    func collectionView(_ collectionView: UICollectionView, willDisplay cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
-        pageControl.currentPage = indexPath.row
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        return CGSize(width: self.collectionView.frame.width, height: self.collectionView.frame.height)
     }
     
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return CGSize(width: self.collectionView.frame.width - 40, height: self.collectionView.frame.height)
+    func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
+        pageControl.currentPage = Int(scrollView.contentOffset.x) / Int(scrollView.frame.width)
+    }
+
+    func scrollViewDidEndScrollingAnimation(_ scrollView: UIScrollView) {
+        pageControl.currentPage = Int(scrollView.contentOffset.x) / Int(scrollView.frame.width)
     }
     
     func getWeatherIcon() -> String {

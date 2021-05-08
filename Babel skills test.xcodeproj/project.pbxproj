@@ -58,6 +58,7 @@
 		509C2851264667B600053131 /* FontName.swift in Sources */ = {isa = PBXBuildFile; fileRef = 509C284F264667B600053131 /* FontName.swift */; };
 		509C28572646689A00053131 /* UIViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 509C28562646689A00053131 /* UIViewExtension.swift */; };
 		509C28582646689A00053131 /* UIViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 509C28562646689A00053131 /* UIViewExtension.swift */; };
+		509C286D26467FC400053131 /* ViewType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 509C286C26467FC400053131 /* ViewType.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -143,6 +144,7 @@
 		509C28482646665500053131 /* SF-Pro-Text-Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SF-Pro-Text-Regular.otf"; sourceTree = "<group>"; };
 		509C284F264667B600053131 /* FontName.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FontName.swift; sourceTree = "<group>"; };
 		509C28562646689A00053131 /* UIViewExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewExtension.swift; sourceTree = "<group>"; };
+		509C286C26467FC400053131 /* ViewType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewType.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -337,6 +339,7 @@
 				50741116264583E600B8E505 /* WheatherResponse.swift */,
 				507411212645844200B8E505 /* ErrorResponse.swift */,
 				509C281C26464A6200053131 /* WeatherType.swift */,
+				509C286C26467FC400053131 /* ViewType.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -549,6 +552,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				509C286D26467FC400053131 /* ViewType.swift in Sources */,
 				507410B32645339100B8E505 /* WidgetCollectionviewCell.swift in Sources */,
 				507410E226457F1400B8E505 /* APIErrrors.swift in Sources */,
 				509C2850264667B600053131 /* FontName.swift in Sources */,
