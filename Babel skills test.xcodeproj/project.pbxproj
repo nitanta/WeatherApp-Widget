@@ -182,13 +182,8 @@
 		5074104B26452EB600B8E505 = {
 			isa = PBXGroup;
 			children = (
-				509C2822264657EC00053131 /* Designs */,
 				5074114E2645AFC900B8E505 /* Widget skills testExtension.entitlements */,
-				509C28122646442000053131 /* Managers */,
-				50741108264580E500B8E505 /* Extension */,
-				507410FD26457FFA00B8E505 /* AppConstants */,
-				507410E026457EFB00B8E505 /* Network */,
-				507410AF2645334C00B8E505 /* Modules */,
+				509C2863264673DD00053131 /* Source */,
 				5074105626452EB700B8E505 /* Babel skills test */,
 				5074107026452EBB00B8E505 /* Babel skills testTests */,
 				5074107B26452EBB00B8E505 /* Babel skills testUITests */,
@@ -371,6 +366,19 @@
 				509C28412646656B00053131 /* SF-Pro-Rounded-Regular.otf */,
 			);
 			path = Fonts;
+			sourceTree = "<group>";
+		};
+		509C2863264673DD00053131 /* Source */ = {
+			isa = PBXGroup;
+			children = (
+				509C2822264657EC00053131 /* Designs */,
+				509C28122646442000053131 /* Managers */,
+				50741108264580E500B8E505 /* Extension */,
+				507410FD26457FFA00B8E505 /* AppConstants */,
+				507410E026457EFB00B8E505 /* Network */,
+				507410AF2645334C00B8E505 /* Modules */,
+			);
+			path = Source;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
