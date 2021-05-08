@@ -1,4 +1,7 @@
 # WeatherApp-Widget
+
+## Selction criteria -1 - Coarching a junior engineer to demonstrate a sample app
+
 Weather app demonstrating widgets.
 
 Built using UIKit, SwiftUI, Combine
