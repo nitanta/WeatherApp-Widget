@@ -84,7 +84,13 @@ class ViewController: UIViewController {
         changeButton.clipsToBounds = true
         
         pageControl.numberOfPages = ViewType.allCases.count
-        pageControl.isHidden = true
+        self.hideShowView(hide: true, views: [collectionView, pageControl, changeButton])
+    }
+    
+    func hideShowView(hide: Bool, views: [UIView]) {
+        views.forEach {
+            $0.isHidden = hide
+        }
     }
     
     func bind() {
@@ -124,7 +130,7 @@ extension ViewController: UICollectionViewDelegate, UICollectionViewDataSource, 
         if viewModel.isLoading.value {
             return 0
         }
-        pageControl.isHidden = false
+        self.hideShowView(hide: true, views: [collectionView, pageControl, changeButton])
         return ViewType.allCases.count
     }
     
@@ -134,7 +140,8 @@ extension ViewController: UICollectionViewDelegate, UICollectionViewDataSource, 
         }
         let type = ViewType.allCases[indexPath.row]
         cell.changeSize(type: type)
-        cell.configure(weatherImage: self.getWeatherIcon(), location: self.viewModel.datasource.value!.name )
+        cell.configure(weatherImage: "ic-cloudy", location: "Bharatpur, Chitwan")
+        //cell.configure(weatherImage: self.getWeatherIcon(), location: self.viewModel.datasource.value!.name )
         return cell
     }
     
