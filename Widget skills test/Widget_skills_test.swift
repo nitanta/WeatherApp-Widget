@@ -198,7 +198,7 @@ struct Widget_skills_test: Widget {
 
 struct Widget_skills_test_Previews: PreviewProvider {
     static var previews: some View {
-        Widget_skills_testEntryView(entry: WeatherDataEntry(backgroundImage: UIImage(), weatherImage: "ic-cloudy", location: "Bharatpur, Chitwan, NP"))
-            .previewContext(WidgetPreviewContext(family: .systemMedium))
+        Widget_skills_testEntryView(entry: WeatherDataEntry(backgroundImage: UIImage(), weatherImage: "ic-cloudy", location: "Bharatpur, Chitw, NP"))
+            .previewContext(WidgetPreviewContext(family: .systemLarge))
     }
 }
