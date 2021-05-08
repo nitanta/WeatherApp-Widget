@@ -17,6 +17,7 @@ class ViewController: UIViewController {
 
     let viewModel = ViewModel(service: WeatherService())
 
+    @IBOutlet weak var pageControl: UIPageControl!
     @IBOutlet weak var changeButton: UIButton!
     @IBOutlet weak var collectionView: UICollectionView!
     
@@ -35,6 +36,8 @@ class ViewController: UIViewController {
         collectionView.dataSource = self
         collectionView.register(UINib(nibName: "WidgetCollectionviewCell", bundle: nil), forCellWithReuseIdentifier: "WidgetCollectionviewCell")
         
+        changeButton.layer.cornerRadius = 8
+        changeButton.clipsToBounds = true
     }
     
 }
@@ -70,6 +73,7 @@ extension ViewController: UIImagePickerControllerDelegate & UINavigationControll
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
         guard let imagePicked = info[.originalImage] as? UIImage else { return }
         self.saveImageInFiles(image: imagePicked)
+        self.collectionView.reloadData()
         self.dismiss(animated: true, completion: nil)
     }
     

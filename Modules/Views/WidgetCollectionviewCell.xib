@@ -22,20 +22,18 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </imageView>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="OEf-jq-HsR">
-                        <rect key="frame" x="20" y="20" width="188" height="175"/>
+                        <rect key="frame" x="20" y="20" width="188" height="144"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="qP6-cD-wRS">
-                                <rect key="frame" x="20" y="20" width="100" height="100"/>
+                                <rect key="frame" x="16" y="16" width="67" height="67"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="100" id="70P-sL-TYV"/>
-                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="100" id="CFq-uj-FfZ"/>
-                                    <constraint firstAttribute="height" constant="100" id="nkD-hi-2B8"/>
-                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="100" id="o61-fk-hCV"/>
+                                    <constraint firstAttribute="width" secondItem="qP6-cD-wRS" secondAttribute="height" multiplier="1:1" id="lSn-fO-jcD"/>
+                                    <constraint firstAttribute="height" constant="67" id="nkD-hi-2B8"/>
                                 </constraints>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="36e-Ki-W0G">
-                                <rect key="frame" x="20" y="140" width="148" height="15"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                <rect key="frame" x="20" y="103" width="148" height="21"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="18"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -43,10 +41,10 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstAttribute="bottom" secondItem="36e-Ki-W0G" secondAttribute="bottom" constant="20" id="1Tn-cF-54r"/>
-                            <constraint firstItem="qP6-cD-wRS" firstAttribute="leading" secondItem="OEf-jq-HsR" secondAttribute="leading" constant="20" id="Cpr-TG-YLT"/>
+                            <constraint firstItem="qP6-cD-wRS" firstAttribute="leading" secondItem="OEf-jq-HsR" secondAttribute="leading" constant="16" id="Cpr-TG-YLT"/>
                             <constraint firstItem="36e-Ki-W0G" firstAttribute="leading" secondItem="OEf-jq-HsR" secondAttribute="leading" constant="20" id="Ruy-lB-LzE"/>
                             <constraint firstItem="36e-Ki-W0G" firstAttribute="top" secondItem="qP6-cD-wRS" secondAttribute="bottom" constant="20" id="lhf-6Y-nRj"/>
-                            <constraint firstItem="qP6-cD-wRS" firstAttribute="top" secondItem="OEf-jq-HsR" secondAttribute="top" constant="20" id="msB-2R-VhL"/>
+                            <constraint firstItem="qP6-cD-wRS" firstAttribute="top" secondItem="OEf-jq-HsR" secondAttribute="top" constant="16" id="msB-2R-VhL"/>
                             <constraint firstAttribute="trailing" secondItem="36e-Ki-W0G" secondAttribute="trailing" constant="20" id="t8j-aa-luB"/>
                         </constraints>
                     </view>

@@ -10,65 +10,69 @@ import SwiftUI
 import Intents
 
 struct Provider: IntentTimelineProvider {
-    func placeholder(in context: Context) -> SimpleEntry {
-        SimpleEntry(date: Date(), configuration: ConfigurationIntent())
+    
+    var locationManager = WidgetLocationManager()
+    var weatherManager = WidgetNetworkManager(service: WeatherService())
+    
+    func getImageInFiles() -> UIImage {
+        guard let containerURL = FileManager.default.containerURL(forSecurityApplicationGroupIdentifier: "group.com.lotuslabs.weatherapp") else { return UIImage() }
+        let imageFileURL = containerURL.appendingPathComponent("widgetbackground.jpg")
+        do {
+            let data = try Data(contentsOf: imageFileURL)
+            return UIImage(data: data) ?? UIImage()
+        } catch {
+            debugPrint("Reading to files failed.", error.localizedDescription)
+            return UIImage()
+        }
+    }
+    
+    func placeholder(in context: Context) -> WeatherDataEntry {
+        WeatherDataEntry(isLoading: true, backgroundImage: UIImage(), weatherImage: "", location: "", date: Date())
     }
 
-    func getSnapshot(for configuration: ConfigurationIntent, in context: Context, completion: @escaping (SimpleEntry) -> ()) {
-        let entry = SimpleEntry(date: Date(), configuration: configuration)
+    func getSnapshot(for configuration: ConfigurationIntent, in context: Context, completion: @escaping (WeatherDataEntry) -> ()) {
+        let entry = WeatherDataEntry(isLoading: true, backgroundImage: getImageInFiles(), weatherImage: "", location: "", date: Date())
         completion(entry)
     }
 
     func getTimeline(for configuration: ConfigurationIntent, in context: Context, completion: @escaping (Timeline<Entry>) -> ()) {
-        var entries: [SimpleEntry] = []
-
-        // Generate a timeline consisting of five entries an hour apart, starting from the current date.
-        let currentDate = Date()
-        for hourOffset in 0 ..< 5 {
-            let entryDate = Calendar.current.date(byAdding: .hour, value: hourOffset, to: currentDate)!
-            let entry = SimpleEntry(date: entryDate, configuration: configuration)
-            entries.append(entry)
+        locationManager.fetchLocation { (location) in
+            weatherManager.fetchData(location: location) { (response) in
+                let entries = [WeatherDataEntry(isLoading: false, backgroundImage: getImageInFiles(), weatherImage: "", location: response.name, date: Date())]
+                let timeline = Timeline(entries: entries, policy: .after(Date(timeIntervalSinceNow: 60)))
+                completion(timeline)
+            }
         }
-
-        let timeline = Timeline(entries: entries, policy: .atEnd)
-        completion(timeline)
     }
+    
 }
 
-struct SimpleEntry: TimelineEntry {
+struct WeatherDataEntry: TimelineEntry {
+    let isLoading: Bool
+    var backgroundImage: UIImage
+    var weatherImage: String
+    var location: String
     let date: Date
-    let configuration: ConfigurationIntent
 }
 
 struct Widget_skills_testEntryView : View {
     var entry: Provider.Entry
 
-    var backgroundImage: UIImage
-    var weatherImage: String
-    var location: String
     var body: some View {
         
         ZStack {
-            Image(uiImage: getImageInFiles() ?? UIImage())
+            Image(uiImage: entry.backgroundImage)
             
-            VStack {
-                
-                Image(weatherImage)
-                
-                Text(location)
+            if entry.isLoading {
+                Text("Loading ...")
+            } else {
+                VStack {
+                    
+                    Image(entry.weatherImage)
+                    
+                    Text(entry.location)
+                }
             }
-        }
-    }
-    
-    func getImageInFiles() -> UIImage? {
-        guard let containerURL = FileManager.default.containerURL(forSecurityApplicationGroupIdentifier: "group.com.lotuslabs.weatherapp") else { return nil }
-        let imageFileURL = containerURL.appendingPathComponent("widgetbackground.jpg")
-        do {
-            let data = try Data(contentsOf: imageFileURL)
-            return UIImage(data: data)
-        } catch {
-            debugPrint("Reading to files failed.", error.localizedDescription)
-            return nil
         }
     }
 }
@@ -79,16 +83,16 @@ struct Widget_skills_test: Widget {
 
     var body: some WidgetConfiguration {
         IntentConfiguration(kind: kind, intent: ConfigurationIntent.self, provider: Provider()) { entry in
-            Widget_skills_testEntryView(entry: entry, backgroundImage: UIImage(), weatherImage: "ic-cloudy", location: "Nepal")
+            Widget_skills_testEntryView(entry: entry)
         }
-        .configurationDisplayName("My Widget")
-        .description("This is an example widget.")
+        .configurationDisplayName("Weather Widget")
+        .description("Widget app for weather.")
     }
 }
 
 struct Widget_skills_test_Previews: PreviewProvider {
     static var previews: some View {
-        Widget_skills_testEntryView(entry: SimpleEntry(date: Date(), configuration: ConfigurationIntent()), backgroundImage: UIImage(), weatherImage: "", location: "Nepal")
+        Widget_skills_testEntryView(entry: WeatherDataEntry(isLoading: true, backgroundImage: UIImage(), weatherImage: "", location: "", date: Date()))
             .previewContext(WidgetPreviewContext(family: .systemSmall))
     }
 }

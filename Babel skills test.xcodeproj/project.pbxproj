@@ -35,6 +35,17 @@
 		507411222645844200B8E505 /* ErrorResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 507411212645844200B8E505 /* ErrorResponse.swift */; };
 		5074112C264584C400B8E505 /* DataExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5074112B264584C400B8E505 /* DataExtension.swift */; };
 		5074113226458A4800B8E505 /* ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5074113126458A4800B8E505 /* ViewModel.swift */; };
+		509C27CF26463DE700053131 /* WeatherService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5074110B2645815400B8E505 /* WeatherService.swift */; };
+		509C27D426463DEA00053131 /* APIErrrors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 507410E126457F1400B8E505 /* APIErrrors.swift */; };
+		509C27D926463DED00053131 /* AppEndpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 507410E726457F3E00B8E505 /* AppEndpoint.swift */; };
+		509C27DE26463DF000053131 /* ApiProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 507410F126457F8900B8E505 /* ApiProvider.swift */; };
+		509C27E326463DF200053131 /* Container.swift in Sources */ = {isa = PBXBuildFile; fileRef = 507410F726457FD700B8E505 /* Container.swift */; };
+		509C27E826463DFD00053131 /* ErrorResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 507411212645844200B8E505 /* ErrorResponse.swift */; };
+		509C27ED26463E0000053131 /* WheatherResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50741116264583E600B8E505 /* WheatherResponse.swift */; };
+		509C27F226463E0300053131 /* Global.swift in Sources */ = {isa = PBXBuildFile; fileRef = 507410FE2645800D00B8E505 /* Global.swift */; };
+		509C27F726463E0800053131 /* DataExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5074112B264584C400B8E505 /* DataExtension.swift */; };
+		509C280426463FD200053131 /* WidgetLocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 509C27C326463C6100053131 /* WidgetLocationManager.swift */; };
+		509C280D26463FD600053131 /* WidgetNetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 509C27C926463D8400053131 /* WidgetNetworkManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -112,6 +123,8 @@
 		5074113126458A4800B8E505 /* ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModel.swift; sourceTree = "<group>"; };
 		507411492645AF2600B8E505 /* Babel skills test.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "Babel skills test.entitlements"; sourceTree = "<group>"; };
 		5074114E2645AFC900B8E505 /* Widget skills testExtension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "Widget skills testExtension.entitlements"; sourceTree = "<group>"; };
+		509C27C326463C6100053131 /* WidgetLocationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WidgetLocationManager.swift; sourceTree = "<group>"; };
+		509C27C926463D8400053131 /* WidgetNetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WidgetNetworkManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -152,7 +165,6 @@
 			isa = PBXGroup;
 			children = (
 				5074114E2645AFC900B8E505 /* Widget skills testExtension.entitlements */,
-				50741109264580F300B8E505 /* Model */,
 				50741108264580E500B8E505 /* Extension */,
 				507410FD26457FFA00B8E505 /* AppConstants */,
 				507410E026457EFB00B8E505 /* Network */,
@@ -224,6 +236,8 @@
 				5074109A26452F8900B8E505 /* Widget_skills_test.intentdefinition */,
 				5074109B26452F8B00B8E505 /* Assets.xcassets */,
 				5074109D26452F8B00B8E505 /* Info.plist */,
+				509C27C326463C6100053131 /* WidgetLocationManager.swift */,
+				509C27C926463D8400053131 /* WidgetNetworkManager.swift */,
 			);
 			path = "Widget skills test";
 			sourceTree = "<group>";
@@ -292,13 +306,6 @@
 				5074112B264584C400B8E505 /* DataExtension.swift */,
 			);
 			path = Extension;
-			sourceTree = "<group>";
-		};
-		50741109264580F300B8E505 /* Model */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Model;
 			sourceTree = "<group>";
 		};
 		5074110A2645814900B8E505 /* Service */ = {
@@ -519,8 +526,19 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				509C27D426463DEA00053131 /* APIErrrors.swift in Sources */,
 				5074109E26452F8B00B8E505 /* Widget_skills_test.intentdefinition in Sources */,
+				509C27D926463DED00053131 /* AppEndpoint.swift in Sources */,
+				509C280D26463FD600053131 /* WidgetNetworkManager.swift in Sources */,
+				509C27F726463E0800053131 /* DataExtension.swift in Sources */,
+				509C27ED26463E0000053131 /* WheatherResponse.swift in Sources */,
+				509C27DE26463DF000053131 /* ApiProvider.swift in Sources */,
+				509C27E326463DF200053131 /* Container.swift in Sources */,
+				509C27CF26463DE700053131 /* WeatherService.swift in Sources */,
 				5074109926452F8900B8E505 /* Widget_skills_test.swift in Sources */,
+				509C27F226463E0300053131 /* Global.swift in Sources */,
+				509C280426463FD200053131 /* WidgetLocationManager.swift in Sources */,
+				509C27E826463DFD00053131 /* ErrorResponse.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
