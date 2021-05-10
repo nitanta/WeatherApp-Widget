@@ -13,7 +13,7 @@ struct Global {
         return "https://api.openweathermap.org/"
     }
     static var apiKey: String {
-        return "7f71e1cecf0a5a766bf18f0b8f423290"
+        return "XXXXXXX"
     }
     static var containerName: String {
         return "group.com.lotuslabs.weatherapp"
